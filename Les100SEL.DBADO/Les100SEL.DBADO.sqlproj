@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{8cd08662-527d-4b8a-b31e-071912fb986a}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -56,5 +56,29 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Scripts" />
+    <Folder Include="Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\users.sql" />
+    <Build Include="Tables\utilisateurs.sql" />
+    <Build Include="Tables\regions.sql" />
+    <Build Include="Tables\utilisateur_regions.sql" />
+    <Build Include="Tables\categories.sql" />
+    <Build Include="Tables\propositions.sql" />
+    <Build Include="Tables\demandes.sql" />
+    <Build Include="Tables\prestataires.sql" />
+    <Build Include="Tables\prestations.sql" />
+    <Build Include="Tables\evaluations.sql" />
+    <Build Include="Tables\conversations.sql" />
+    <Build Include="Tables\conversation_users.sql" />
+    <Build Include="Tables\messages.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Les100SEL.DBADO.publish.xml" />
   </ItemGroup>
 </Project>

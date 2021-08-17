@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Les100SEL.DBADO", "Les100SEL.DBADO\Les100SEL.DBADO.sqlproj", "{8CD08662-527D-4B8A-B31E-071912FB986A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolIca", "..\..\..\..\..\TEMP\ToolIca\ToolIca.csproj", "{AF62FB3E-F4DA-4729-A4EF-5B4B0CF423BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Les100SEL.DA", "Les100SEL.DA\Les100SEL.DA.csproj", "{7A6138D1-4A68-4742-A576-679C9F2960AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{8CD08662-527D-4B8A-B31E-071912FB986A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CD08662-527D-4B8A-B31E-071912FB986A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8CD08662-527D-4B8A-B31E-071912FB986A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AF62FB3E-F4DA-4729-A4EF-5B4B0CF423BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF62FB3E-F4DA-4729-A4EF-5B4B0CF423BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF62FB3E-F4DA-4729-A4EF-5B4B0CF423BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF62FB3E-F4DA-4729-A4EF-5B4B0CF423BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6138D1-4A68-4742-A576-679C9F2960AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6138D1-4A68-4742-A576-679C9F2960AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6138D1-4A68-4742-A576-679C9F2960AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6138D1-4A68-4742-A576-679C9F2960AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
