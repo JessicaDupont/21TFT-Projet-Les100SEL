@@ -12,7 +12,7 @@ namespace Les100SEL.DA.Tables
         public string NomTable => "categories";
         public string Id => "categorie_id";
         public string Nom => "nom";
-        public string Description => "[description]";
+        public string Description => "description";
         public string NbGrainsMin => "grains_min";
         public string CategorieParent => "categorie_parent";
     }

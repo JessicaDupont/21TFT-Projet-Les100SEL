@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolIca", "..\..\..\..\..\T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Les100SEL.DA", "Les100SEL.DA\Les100SEL.DA.csproj", "{7A6138D1-4A68-4742-A576-679C9F2960AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Les100SEL.API", "Les100SEL.API\Les100SEL.API.csproj", "{7CE033E1-ED00-43FF-BF32-ABFA03BD85C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Les100SEL.Models", "Les100SEL.Models\Les100SEL.Models.csproj", "{0A824C91-C4FA-4295-B27E-1C351E3E430A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{7A6138D1-4A68-4742-A576-679C9F2960AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A6138D1-4A68-4742-A576-679C9F2960AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A6138D1-4A68-4742-A576-679C9F2960AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CE033E1-ED00-43FF-BF32-ABFA03BD85C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CE033E1-ED00-43FF-BF32-ABFA03BD85C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CE033E1-ED00-43FF-BF32-ABFA03BD85C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CE033E1-ED00-43FF-BF32-ABFA03BD85C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A824C91-C4FA-4295-B27E-1C351E3E430A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A824C91-C4FA-4295-B27E-1C351E3E430A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A824C91-C4FA-4295-B27E-1C351E3E430A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A824C91-C4FA-4295-B27E-1C351E3E430A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
