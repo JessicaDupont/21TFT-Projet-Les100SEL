@@ -1,4 +1,5 @@
-﻿using Les100SEL.Models.IModels;
+﻿using Les100SEL.Models.Forms;
+using Les100SEL.Models.IModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,7 @@ using ToolIca.DataBases.Repositories;
 namespace Les100SEL.DA.Repositories.Bases
 {
     public interface ICategoriesRepository : 
-        IRepositoryRead<ICategorie, int>,
-        IRepositorySearch<ICategorie, int>
+        IRepository<ICategorie, CategorieForm, int>
     {
     }
 }

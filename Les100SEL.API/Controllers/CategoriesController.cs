@@ -26,8 +26,8 @@ namespace Les100SEL.API.Controllers
         /// fourni la liste complète des catégories et sous-catégories
         /// </summary>
         /// <returns></returns>
-        // GET: api/<CategoriesController>
-        [HttpGet]
+        // GET: api/<CategoriesController>/Liste
+        [HttpGet("Liste")]
         public ActionResult<IEnumerable<ICategorie>> Get()
         {
             try
@@ -45,27 +45,39 @@ namespace Les100SEL.API.Controllers
             }
         }
 
-        //// GET api/<CategoriesController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        // GET api/<CategoriesController>/Read=5
+        [HttpGet("Read={id}")]
+        public ActionResult<ICategorie> Get(int id)
+        {
+            try
+            {
+                return Ok(categorieRepository.Read(id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new
+                    {
+                        Method = "Get",
+                        Message = ex.Message
+                    });
+            }
+        }
 
         //// POST api/<CategoriesController>
         //[HttpPost]
-        //public void Post([FromBody] string value)
+        //public void Post([FromBody] CategorieForm value)
         //{
         //}
 
-        //// PUT api/<CategoriesController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
+        //// PUT api/<CategoriesController>/Update=5
+        //[HttpPut("Update={id}")]
+        //public void Put(int id, [FromBody] CategorieForm value)
         //{
         //}
 
-        //// DELETE api/<CategoriesController>/5
-        //[HttpDelete("{id}")]
+        //// DELETE api/<CategoriesController>/Delete=5
+        //[HttpDelete("Delete={id}")]
         //public void Delete(int id)
         //{
         //}
