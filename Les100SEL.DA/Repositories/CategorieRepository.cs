@@ -17,8 +17,6 @@ namespace Les100SEL.DA.Repositories
     {
         public const string CategoriesRacine = "root";
         public const string CategoriesEnfantDe = "parent";
-        //public const string CategoriesAncetresDe = "ancetres";
-        //public const string CategoriesDescendantsDe = "descendants";
 
         private readonly TCategories table;
         private readonly CategorieMapping map;
@@ -31,12 +29,25 @@ namespace Les100SEL.DA.Repositories
 
         public ICategorie Create(CategorieForm form)
         {
-            throw new NotImplementedException();
+            string requete = "insert into "+table.NomTable+
+                " ("+table.Nom+", "+table.Description+", "+table.NbGrainsMin+", "+table.CategorieParent+") " +
+                " values (@nom, @description, @nbGrainsMin, @parent); " +
+                "SELECT CAST(scope_identity() AS int)";
+            Command cmd = new Command(requete, false);
+            cmd.AddParameter("nom", form.Nom);
+            cmd.AddParameter("description", form.Description);
+            cmd.AddParameter("nbGrainsMin", form.NbGrainsMin);
+            cmd.AddParameter("parent", form.Parent);
+
+            int result = connect.ExecuteScalar<int>(cmd);
+            //int result = connect.ExecuteReader<int>(new Command("select @@identity as identity", false), reader => (int)reader.["identity"]);
+
+            return Read(result);
         }
 
         public ICategorie Delete(ICategorie model)
         {
-            throw new NotImplementedException();
+            return Delete(model.Id);
         }
 
         public ICategorie Delete(int id)

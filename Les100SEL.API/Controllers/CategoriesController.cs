@@ -1,4 +1,5 @@
 ﻿using Les100SEL.DA.Repositories.Bases;
+using Les100SEL.Models.Forms;
 using Les100SEL.Models.IModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,10 +23,6 @@ namespace Les100SEL.API.Controllers
             this.categorieRepository = categorieRepository;
         }
 
-        /// <summary>
-        /// fourni la liste complète des catégories et sous-catégories
-        /// </summary>
-        /// <returns></returns>
         // GET: api/<CategoriesController>/Liste
         [HttpGet("Liste")]
         public ActionResult<IEnumerable<ICategorie>> Get()
@@ -58,17 +55,32 @@ namespace Les100SEL.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     new
                     {
-                        Method = "Get",
+                        Method = "Get(id)",
                         Message = ex.Message
                     });
             }
         }
 
-        //// POST api/<CategoriesController>
-        //[HttpPost]
-        //public void Post([FromBody] CategorieForm value)
-        //{
-        //}
+        // POST api/<CategoriesController>
+        [HttpPost]
+        public ActionResult<string> Post([FromBody] CategorieForm form)
+        {
+            try
+            {
+                if (form is null) { return BadRequest(); }
+                ICategorie result = categorieRepository.Create(form);
+                return Ok("La catégorie "+result.Nom+" a bien été ajoutée.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new
+                    {
+                        Method = "Post",
+                        Message = ex.Message
+                    });
+            }
+        }
 
         //// PUT api/<CategoriesController>/Update=5
         //[HttpPut("Update={id}")]
