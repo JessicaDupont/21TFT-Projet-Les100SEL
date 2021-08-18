@@ -15,6 +15,7 @@ namespace Les100SEL.DA.Repositories
 {
     public class CategorieRepository : RepositoryBase, ICategoriesRepository
     {
+        public const string CategorieId = "id";
         public const string CategoriesRacine = "root";
         public const string CategoriesEnfantDe = "parent";
 
@@ -40,8 +41,7 @@ namespace Les100SEL.DA.Repositories
             cmd.AddParameter("parent", form.Parent);
 
             int result = connect.ExecuteScalar<int>(cmd);
-            //int result = connect.ExecuteReader<int>(new Command("select @@identity as identity", false), reader => (int)reader.["identity"]);
-
+            
             return Read(result);
         }
 
@@ -52,26 +52,23 @@ namespace Les100SEL.DA.Repositories
 
         public ICategorie Delete(int id)
         {
-            throw new NotImplementedException();
+            ICategorie result = Read(id);
+
+            string requete = "Delete from "+table.NomTable+" where "+table.Id+" = "+id;
+            Command cmd = new Command(requete, false);
+            connect.ExecuteNonQuery(cmd);
+
+            return result;
         }
 
         public ICategorie Read(int id)
         {
-            Command cmd = new Command("select * from " + table.NomTable + 
-                " where " + table.Id + " = " + id, false);
-            return connect.ExecuteReader(cmd, reader => map.Mapping(reader)).First();
+            return Search(new Filtre(CategorieId, id)).First();
         }
 
         public IEnumerable<ICategorie> Read()
         {
-            //récupérer les catégories racines
-            IEnumerable<ICategorie> racines = Search(new Filtre(CategoriesRacine, 0));
-            //récupérer les catégories enfants
-            foreach (ICategorie racine in racines)
-            {
-                yield return ObtenirDescendants(racine);
-            }
-
+            return Search(new Filtre(CategoriesRacine, 0));
         }
 
         private ICategorie ObtenirDescendants(ICategorie parent)
@@ -103,6 +100,9 @@ namespace Les100SEL.DA.Repositories
             string requete = "select * from " + table.NomTable + " ";
             switch (filtre.Champ.ToLower())
             {
+                case CategorieId:
+                    requete += "where "+table.Id+" = "+filtre.Valeur;
+                    break;
                 case CategoriesRacine:
                     requete += "where "+table.CategorieParent+" is null";
                     break;
@@ -115,7 +115,14 @@ namespace Les100SEL.DA.Repositories
 
             //executer la requete
             Command cmd = new Command(requete, false);
-            return connect.ExecuteReader(cmd, reader => map.Mapping(reader));
+            IEnumerable<ICategorie> result = connect.ExecuteReader(cmd, reader => map.Mapping(reader));
+
+            //récuperer les enfants + return
+            foreach (ICategorie cat in result) 
+            {
+                yield return ObtenirDescendants(cat);
+            }
+
         }
 
         public IEnumerable<ICategorie> Search(IEnumerable<Filtre> filtres)

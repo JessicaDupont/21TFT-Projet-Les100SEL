@@ -61,8 +61,8 @@ namespace Les100SEL.API.Controllers
             }
         }
 
-        // POST api/<CategoriesController>
-        [HttpPost]
+        // POST api/<CategoriesController>/Add
+        [HttpPost("Add")]
         public ActionResult<string> Post([FromBody] CategorieForm form)
         {
             try
@@ -88,10 +88,24 @@ namespace Les100SEL.API.Controllers
         //{
         //}
 
-        //// DELETE api/<CategoriesController>/Delete=5
-        //[HttpDelete("Delete={id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        // DELETE api/<CategoriesController>/Delete=5
+        [HttpDelete("Delete={id}")]
+        public ActionResult<string> Delete(int id)
+        {
+            try
+            {
+                ICategorie result = categorieRepository.Delete(id);
+                return Ok("La catégorie "+result.Nom+" a bien été supprimée.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new
+                    {
+                        Method = "Delete(id)",
+                        Message = ex.Message
+                    });
+            }
+        }
     }
 }
