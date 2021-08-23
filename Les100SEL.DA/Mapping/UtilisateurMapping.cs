@@ -13,44 +13,40 @@ using ToolIca.DataBases.ADO.Mapping;
 
 namespace Les100SEL.DA.Mapping
 {
-    public class CategorieMapping : IMapping<DbDataReader, ICategorie, CategorieForm>
+    public class UtilisateurMapping : IMapping<DbDataReader, IUtilisateur, UtilisateurForm>
     {
-        private readonly TCategories t;
-
-        public CategorieMapping(TCategories table)
+        private readonly TUtilisateur t;
+        public UtilisateurMapping(TUtilisateur table)
         {
-            this.t = table;
+            t = table;
         }
 
-        public Command Mapping(CategorieForm form, CRUD type)
+        public Command Mapping(UtilisateurForm form, CRUD type)
         {
             string requete;
             Command cmd;
-            switch (type) 
+            switch (type)
             {
                 case CRUD.Create:
                     requete = $"insert into {t.NomTable} " +
-                        $"({t.Nom}, {t.Description}, {t.NbGrainsMin}, {t.CategorieParent}) " +
-                        $"values (@nom, @description, @nbGrainsMin, @parent); " +
+                        $"({t.Alerte}, {t.DateDeNaissance}, {t.Nom}) " +
+                        $"values (@alerte, @ddn, @nom); " +
                         $"SELECT CAST(scope_identity() AS int);";
                     cmd = new Command(requete, false);
+                    cmd.AddParameter("alerte", form.EstSignaler);
+                    cmd.AddParameter("ddn", form.Ddn);
                     cmd.AddParameter("nom", form.Nom);
-                    cmd.AddParameter("description", form.Description);
-                    cmd.AddParameter("nbGrainsMin", form.NbGrainsMin);
-                    cmd.AddParameter("parent", form.Parent);
                     break;
                 case CRUD.Update:
                     requete = $"update {t.NomTable} " +
-                        $"set {t.CategorieParent} = @parent, " +
-                        $"{t.Description} = @desc, " +
-                        $"{t.NbGrainsMin} = @grains, " +
+                        $"set {t.Alerte} = @alerte, " +
+                        $"{t.DateDeNaissance} = @ddn, " +
                         $"{t.Nom} = @nom " +
                         $"where {t.Id} = @id;" +
                         $"SELECT {t.Id} from {t.NomTable} where {t.Id} = @idbis;";
                     cmd = new Command(requete, false);
-                    cmd.AddParameter("parent", form.Parent);
-                    cmd.AddParameter("desc", form.Description);
-                    cmd.AddParameter("grains", form.NbGrainsMin);
+                    cmd.AddParameter("alerte", form.EstSignaler);
+                    cmd.AddParameter("ddn", form.Ddn);
                     cmd.AddParameter("nom", form.Nom);
                     cmd.AddParameter("id", form.Id);
                     cmd.AddParameter("idbis", form.Id);
@@ -62,6 +58,11 @@ namespace Les100SEL.DA.Mapping
                     cmd.AddParameter("id", form.Id);
                     break;
                 case CRUD.Read:
+                    requete = $"select * from {t.NomTable} " +
+                        $"where {t.Id} = @id";
+                    cmd = new Command(requete, false);
+                    cmd.AddParameter("id", form.Id);
+                    break;
                 default:
                     requete = $"select * from {t.NomTable};";
                     cmd = new Command(requete, false);
@@ -70,13 +71,12 @@ namespace Les100SEL.DA.Mapping
             return cmd;
         }
 
-        public ICategorie Mapping(DbDataReader data)
+        public IUtilisateur Mapping(DbDataReader data)
         {
-            ICategorie result = new Categorie((int)data[t.Id]);
-            result.Description = data[t.Description] == DBNull.Value ? null : (string)data[t.Description];
-            result.NbGrainsMin = (int)data[t.NbGrainsMin];
+            IUtilisateur result = new Utilisateur((int)data[t.Id]);
+            result.Ddn = (DateTime)data[t.DateDeNaissance];
+            result.EstSignaler = (bool)data[t.Alerte];
             result.Nom = (string)data[t.Nom];
-            result.Parent = data[t.CategorieParent] == DBNull.Value ? null : new Categorie((int)data[t.CategorieParent]);
             result.DonneesRecuperees = true;
             return result;
         }

@@ -26,6 +26,7 @@ namespace Les100SEL.API
 
             //repositories
             services.AddScoped<ICategoriesRepository, CategorieRepository>();
+            services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
 
             services.AddSwaggerGen(c =>
             {

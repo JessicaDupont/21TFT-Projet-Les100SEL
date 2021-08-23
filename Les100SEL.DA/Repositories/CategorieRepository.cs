@@ -32,9 +32,7 @@ namespace Les100SEL.DA.Repositories
         public ICategorie Create(CategorieForm form)
         {
             Command cmd = map.Mapping(form, CRUD.Create);
-
-            int result = connect.ExecuteScalar<int>(cmd);
-            
+            int result = connect.ExecuteScalar<int>(cmd);            
             return Read(result);
         }
 
@@ -46,10 +44,8 @@ namespace Les100SEL.DA.Repositories
         public ICategorie Delete(int id)
         {
             ICategorie result = Read(id);
-
             Command cmd = map.Mapping(new CategorieForm(id), CRUD.Delete);
             connect.ExecuteNonQuery(cmd);
-
             return result;
         }
 
