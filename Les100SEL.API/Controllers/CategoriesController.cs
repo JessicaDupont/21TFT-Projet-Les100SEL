@@ -82,11 +82,26 @@ namespace Les100SEL.API.Controllers
             }
         }
 
-        //// PUT api/<CategoriesController>/Update=5
-        //[HttpPut("Update={id}")]
-        //public void Put(int id, [FromBody] CategorieForm value)
-        //{
-        //}
+        // PUT api/<CategoriesController>/Update=5
+        [HttpPut("Update={id}")]
+        public ActionResult<string> Put(int id, [FromBody] CategorieForm form)
+        {
+            try
+            {
+                if (form is null) { return BadRequest(); }
+                ICategorie result = categorieRepository.Update(id, form);
+                return Ok("La catégorie " + result.Nom + " a bien été mise à jour.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new
+                    {
+                        Method = "Put",
+                        Message = ex.Message
+                    });
+            }
+        }
 
         // DELETE api/<CategoriesController>/Delete=5
         [HttpDelete("Delete={id}")]

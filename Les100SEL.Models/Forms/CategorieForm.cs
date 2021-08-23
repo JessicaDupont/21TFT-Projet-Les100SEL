@@ -9,6 +9,11 @@ namespace Les100SEL.Models.Forms
 {
     public class CategorieForm : IForm
     {
+        public CategorieForm(int id)
+        {
+            Id = id;
+        }
+
         public int Id { get; set; }
         public string Nom { get; set; }
         public string Description { get; set; }

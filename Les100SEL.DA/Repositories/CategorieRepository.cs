@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ToolIca.DataBases.ADO.Bases;
+using ToolIca.DataBases.ADO.Mapping;
 using ToolIca.DataBases.Repositories;
 
 namespace Les100SEL.DA.Repositories
@@ -30,15 +31,7 @@ namespace Les100SEL.DA.Repositories
 
         public ICategorie Create(CategorieForm form)
         {
-            string requete = "insert into "+table.NomTable+
-                " ("+table.Nom+", "+table.Description+", "+table.NbGrainsMin+", "+table.CategorieParent+") " +
-                " values (@nom, @description, @nbGrainsMin, @parent); " +
-                "SELECT CAST(scope_identity() AS int)";
-            Command cmd = new Command(requete, false);
-            cmd.AddParameter("nom", form.Nom);
-            cmd.AddParameter("description", form.Description);
-            cmd.AddParameter("nbGrainsMin", form.NbGrainsMin);
-            cmd.AddParameter("parent", form.Parent);
+            Command cmd = map.Mapping(form, CRUD.Create);
 
             int result = connect.ExecuteScalar<int>(cmd);
             
@@ -54,8 +47,7 @@ namespace Les100SEL.DA.Repositories
         {
             ICategorie result = Read(id);
 
-            string requete = "Delete from "+table.NomTable+" where "+table.Id+" = "+id;
-            Command cmd = new Command(requete, false);
+            Command cmd = map.Mapping(new CategorieForm(id), CRUD.Delete);
             connect.ExecuteNonQuery(cmd);
 
             return result;
@@ -132,7 +124,11 @@ namespace Les100SEL.DA.Repositories
 
         public ICategorie Update(int id, CategorieForm form)
         {
-            throw new NotImplementedException();
+            form.Id = id;
+            Command cmd = map.Mapping(form, CRUD.Update);
+
+            int result = connect.ExecuteScalar<int>(cmd);
+            return Read(result);
         }
     }
 }
