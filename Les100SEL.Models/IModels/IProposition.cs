@@ -11,6 +11,7 @@ namespace Les100SEL.Models.IModels
     {
         public ICategorie Categorie { get; set; }
         public IUtilisateur Utilisateur { get; set; }
+        public string Titre { get; set; }
         public string Profil { get; set; }
         public int NbGrains { get; set; }
         

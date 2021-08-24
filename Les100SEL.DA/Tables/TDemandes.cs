@@ -14,6 +14,7 @@ namespace Les100SEL.DA.Tables
         public string CategorieId => "categorie_id";
         public string UtilisateurId => "utilisateur_id";
         public string RegionId => "region_id";
+        public string Titre => "titre";
         public string Adresse => "adresse";
         public string Description => "[description]";
         public string NbGrains => "nb_grains";

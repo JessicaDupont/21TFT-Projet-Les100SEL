@@ -12,11 +12,10 @@ namespace Les100SEL.Models.IModels
         public string Nom { get; set; }
         public DateTime Ddn { get; set; }
 
-        public IDictionary<IRegion, float> Regions { get; set; }
-        public IEnumerable<IConversation> Conversations { get; set; }
-        public IEnumerable<IProposition> Propositions { get; set; }
-        public IEnumerable<IDemande> Demandes { get; set; }
-        public IEnumerable<IPrestation> Prestations { get; set; }
+        public IDictionary<IRegion, float> Regions();
+        public IEnumerable<IConversation> Conversations();
+        public IEnumerable<IProposition> Propositions();
+        public IEnumerable<IDemande> Demandes();
 
         //IAlerte
         public new bool EstSignaler { get; set; }

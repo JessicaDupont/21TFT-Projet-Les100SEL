@@ -4,6 +4,7 @@
 	categorie_id int not null,
 	utilisateur_id int not null,
 	region_id int not null,
+	titre nvarchar(100) not null,
 	adresse nvarchar(100),
 	[description] text,
 	nb_grains int not null,

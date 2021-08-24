@@ -13,6 +13,7 @@ namespace Les100SEL.DA.Tables
         public string Id => "[proposition_id]";
         public string CategorieId => "categorie_id";
         public string UtilisateurId => "utilisateur_id";
+        public string Titre => "titre";
         public string ProfilPropose => "profil_propose";
         public string NbGrains => "nb_grains";
         public string Alerte => "alerte";

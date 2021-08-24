@@ -23,10 +23,21 @@ namespace Les100SEL.Models
         public bool EstSignaler { get; set; }
         public int Id { get; set; }
         public bool DonneesRecuperees { get; set; }
-        public IDictionary<IRegion, float> Regions { get; set; }
-        public IEnumerable<IConversation> Conversations { get; set; }
-        public IEnumerable<IProposition> Propositions { get; set; }
-        public IEnumerable<IDemande> Demandes { get; set; }
-        public IEnumerable<IPrestation> Prestations { get; set; }
+        public IDictionary<IRegion, float> Regions() 
+        {
+            throw new NotImplementedException();
+        }
+        public IEnumerable<IConversation> Conversations()
+        {
+            throw new NotImplementedException();
+        }
+        public IEnumerable<IProposition> Propositions()
+        {
+            throw new NotImplementedException();
+        }
+        public IEnumerable<IDemande> Demandes()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

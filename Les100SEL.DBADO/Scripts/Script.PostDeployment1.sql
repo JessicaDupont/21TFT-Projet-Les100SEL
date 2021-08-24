@@ -154,19 +154,19 @@ insert into categories(categorie_id, categorie_parent, nom) values(801, 8, 'Rela
 insert into categories(categorie_id, nom) values(9, 'Preterie - Donnerie');
 set identity_insert categories off;
 /*_____*****_____PROPOSITIONS_____*****_____*/
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (410,5,2);
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (106,1,1);
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (210,1,2);
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (213,1,2);
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (301,1,1);
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (305,1,1);
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (316,1,1);
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (405,1,1);
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (409,1,2);
-insert into propositions(categorie_id, utilisateur_id, nb_grains) values (508,2,5);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Apprendre la Harpe', 410,5,2);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Ecriture de lettre', 106,1,1);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Relever votre boite aux lettres', 210,1,2);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Coudre vos tentures', 213,1,2);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Installer votre ordinateur', 301,1,1);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Petites réparations', 305,1,1);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Promenade à partie de la place', 316,1,1);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Sciences et mathématiques', 405,1,1);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Word, Excel et PowerPoint', 409,1,2);
+insert into propositions(titre, categorie_id, utilisateur_id, nb_grains) values ('Affiche pour un évènement privé', 508,2,5);
 /*_____*****_____DEMANDES_____*****_____*/
-insert into demandes(categorie_id, utilisateur_id, nb_grains, region_id) values (410,1,2,2);
-insert into demandes(categorie_id, utilisateur_id, nb_grains, region_id) values (419,1,1,11);
+insert into demandes(titre, categorie_id, utilisateur_id, nb_grains, region_id) values ('Jouer de la Harpe', 410,1,2,2);
+insert into demandes(titre, categorie_id, utilisateur_id, nb_grains, region_id) values ('Apprendre l''anglais B2', 419,1,1,11);
 /*_____*****_____PRESTATAIRES_____*****_____*/
 insert into prestataires(proposition_id, demande_id) values (1,1);
 /*_____*****_____PRESTATIONS_____*****_____*/

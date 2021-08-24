@@ -2,6 +2,7 @@
 (
 	[proposition_id] INT NOT NULL identity PRIMARY KEY,
 	categorie_id int not null,
+	titre nvarchar(100) not null,
 	utilisateur_id int not null,
 	profil_propose text,
 	nb_grains int not null,
