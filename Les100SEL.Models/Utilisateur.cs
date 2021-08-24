@@ -20,7 +20,7 @@ namespace Les100SEL.Models
 
         public string Nom { get; set; }
         public DateTime Ddn { get; set; }
-        public bool EstSignaler { get; set; }
+        public bool Alerte { get; set; }
         public int Id { get; set; }
         public bool DonneesRecuperees { get; set; }
         public IDictionary<IRegion, float> Regions() 

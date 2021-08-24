@@ -29,23 +29,26 @@ namespace Les100SEL.DA.Mapping
             {
                 case CRUD.Create:
                     requete = $"insert into {t.NomTable} " +
-                        $"({t.Alerte}, {t.DateDeNaissance}, {t.Nom}) " +
-                        $"values (@alerte, @ddn, @nom); " +
+                        $"({t.DateDeNaissance}, {t.Nom}) " +
+                        $"values (@ddn, @nom); " +
                         $"SELECT CAST(scope_identity() AS int);";
                     cmd = new Command(requete, false);
-                    cmd.AddParameter("alerte", form.EstSignaler);
                     cmd.AddParameter("ddn", form.Ddn);
                     cmd.AddParameter("nom", form.Nom);
                     break;
+                case CRUD.Read:
+                    requete = $"select * from {t.NomTable} " +
+                        $"where {t.Id} = @id";
+                    cmd = new Command(requete, false);
+                    cmd.AddParameter("id", form.Id);
+                    break;
                 case CRUD.Update:
                     requete = $"update {t.NomTable} " +
-                        $"set {t.Alerte} = @alerte, " +
-                        $"{t.DateDeNaissance} = @ddn, " +
+                        $"set {t.DateDeNaissance} = @ddn, " +
                         $"{t.Nom} = @nom " +
                         $"where {t.Id} = @id;" +
                         $"SELECT {t.Id} from {t.NomTable} where {t.Id} = @idbis;";
                     cmd = new Command(requete, false);
-                    cmd.AddParameter("alerte", form.EstSignaler);
                     cmd.AddParameter("ddn", form.Ddn);
                     cmd.AddParameter("nom", form.Nom);
                     cmd.AddParameter("id", form.Id);
@@ -57,12 +60,30 @@ namespace Les100SEL.DA.Mapping
                     cmd = new Command(requete, false);
                     cmd.AddParameter("id", form.Id);
                     break;
-                case CRUD.Read:
-                    requete = $"select * from {t.NomTable} " +
-                        $"where {t.Id} = @id";
+                case CRUD.Alert:
+                    requete = $"update {t.NomTable} " +
+                        $"set {t.Alerte} = 1 " +
+                        $"where {t.Id} = @id;" +
+                        $"SELECT {t.Id} from {t.NomTable} where {t.Id} = @idbis;";
                     cmd = new Command(requete, false);
                     cmd.AddParameter("id", form.Id);
+                    cmd.AddParameter("idbis", form.Id);
                     break;
+                case CRUD.NoAlert:
+                    requete = $"update {t.NomTable} " +
+                        $"set {t.Alerte} = 0 " +
+                        $"where {t.Id} = @id;" +
+                        $"SELECT {t.Id} from {t.NomTable} where {t.Id} = @idbis;";
+                    cmd = new Command(requete, false);
+                    cmd.AddParameter("id", form.Id);
+                    cmd.AddParameter("idbis", form.Id);
+                    break;
+                case CRUD.ListAlerts:
+                    requete = $"select * from {t.NomTable} " +
+                        $"where {t.Alerte} = 1";
+                    cmd = new Command(requete, false);
+                    break;
+                case CRUD.List:
                 default:
                     requete = $"select * from {t.NomTable};";
                     cmd = new Command(requete, false);
@@ -75,7 +96,7 @@ namespace Les100SEL.DA.Mapping
         {
             IUtilisateur result = new Utilisateur((int)data[t.Id]);
             result.Ddn = (DateTime)data[t.DateDeNaissance];
-            result.EstSignaler = (bool)data[t.Alerte];
+            result.Alerte = (bool)data[t.Alerte];
             result.Nom = (string)data[t.Nom];
             result.DonneesRecuperees = true;
             return result;

@@ -18,7 +18,7 @@ namespace Les100SEL.Models.IModels
         public IEnumerable<IDemande> Demandes();
 
         //IAlerte
-        public new bool EstSignaler { get; set; }
+        public new bool Alerte { get; set; }
 
         //IModel
         public new int Id { get; set; }

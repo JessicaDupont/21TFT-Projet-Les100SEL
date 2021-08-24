@@ -13,7 +13,8 @@ namespace Les100SEL.DA.Repositories.Bases
         IRepositoryCreate<IUtilisateur, UtilisateurForm, int>,
         IRepositoryRead<IUtilisateur, int>,
         IRepositoryUpdate<IUtilisateur, UtilisateurForm, int>,
-        IRepositoryDelete<IUtilisateur, int>
+        IRepositoryDelete<IUtilisateur, int>,
+        IRepositoryAlert<IUtilisateur, int>
     {
     }
 }

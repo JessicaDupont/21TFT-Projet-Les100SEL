@@ -24,7 +24,7 @@ namespace Les100SEL.API.Controllers
         }
 
         // GET: api/<UtilisateursController>
-        [HttpGet]
+        [HttpGet("Liste")]
         public ActionResult<IEnumerable<IUtilisateur>> Get()
         {
             try
@@ -41,9 +41,27 @@ namespace Les100SEL.API.Controllers
                     });
             }
         }
+        // GET: api/<UtilisateursController>
+        [HttpGet("ListeAlertes")]
+        public ActionResult<IEnumerable<IUtilisateur>> GetAlertes()
+        {
+            try
+            {
+                return Ok(utilisateurRepository.GetAlert());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new
+                    {
+                        Method = "GetAlertes",
+                        Message = ex.Message
+                    });
+            }
+        }
 
         // GET api/<UtilisateursController>/5
-        [HttpGet("{id}")]
+        [HttpGet("Read={id}")]
         public ActionResult<IUtilisateur> Get(int id)
         {
             try
@@ -62,7 +80,7 @@ namespace Les100SEL.API.Controllers
         }
 
         // POST api/<UtilisateursController>
-        [HttpPost]
+        [HttpPost("Create")]
         public ActionResult<string> Post([FromBody] UtilisateurForm form)
         {
             try
@@ -83,7 +101,7 @@ namespace Les100SEL.API.Controllers
         }
 
         // PUT api/<UtilisateursController>/5
-        [HttpPut("{id}")]
+        [HttpPut("Update={id}")]
         public ActionResult<string> Put(int id, [FromBody] UtilisateurForm form)
         {
             try
@@ -102,9 +120,28 @@ namespace Les100SEL.API.Controllers
                     });
             }
         }
+        // PUT api/<UtilisateursController>/5
+        [HttpPut("Alerte={id}")]
+        public ActionResult<string> Alerte(int id)
+        {
+            try
+            {
+                IUtilisateur result = utilisateurRepository.Alert(id);
+                return Ok($"L'utilisateur {result.Nom} a bien été modifié.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new
+                    {
+                        Method = "Put",
+                        Message = ex.Message
+                    });
+            }
+        }
 
         // DELETE api/<UtilisateursController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete={id}")]
         public ActionResult<string> Delete(int id)
         {
             try

@@ -79,5 +79,29 @@ namespace Les100SEL.DA.Repositories
             int result = connect.ExecuteScalar<int>(cmd);
             return Read(result);
         }
+
+        public IUtilisateur Alert(int id)
+        {
+            Command cmd = map.Mapping(new UtilisateurForm(id), CRUD.Alert);
+            int result = connect.ExecuteScalar<int>(cmd);
+            return Read(result);
+        }
+
+        public IUtilisateur NoAlert(int id)
+        {
+            Command cmd = map.Mapping(new UtilisateurForm(id), CRUD.NoAlert);
+            int result = connect.ExecuteScalar<int>(cmd);
+            return Read(result);
+        }
+
+        public IEnumerable<IUtilisateur> GetAlert()
+        {
+            Command cmd = map.Mapping(new UtilisateurForm(), CRUD.ListAlerts);
+            IEnumerable<IUtilisateur> result = connect.ExecuteReader(cmd, reader => map.Mapping(reader));
+            foreach (IUtilisateur u in result)
+            {
+                yield return ObtenirInfos(u);
+            }
+        }
     }
 }

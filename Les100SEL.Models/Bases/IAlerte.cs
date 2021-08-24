@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToolIca.Models.Bases;
 
 namespace Les100SEL.Models.Bases
 {
-    public interface IAlerte
+    public interface IAlerte : IAlertBase
     {
-        public bool EstSignaler { get; set; }
     }
 }
