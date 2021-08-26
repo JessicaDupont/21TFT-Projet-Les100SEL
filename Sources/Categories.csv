@@ -1,0 +1,120 @@
+Categorie;Categorie ID;Parent;Parent ID;Description;Nb grains minimum
+Aide administrative, sociale et juridique;100;;;;1
+Aide administrative;110;Aide administrative, sociale et juridique;100;;0
+Aide sociale;120;Aide administrative, sociale et juridique;100;;0
+Vie sociale;130;Aide administrative, sociale et juridique;100;;0
+Aide juridique;140;Aide administrative, sociale et juridique;100;;0
+Comparaison télécoms;150;Aide administrative, sociale et juridique;100;;0
+Comparaison assurances;160;Aide administrative, sociale et juridique;100;;0
+Maison et habitat;200;;;;2
+Petits travaux;210;Maison et habitat;200;;0
+Secteur;220;Maison et habitat;200;;0
+Chauffage;221;Secteur;220;;0
+Électricité;222;Secteur;220;;0
+Électroménager;223;Secteur;220;;0
+Menuiserie;224;Secteur;220;;0
+Pierre;225;Secteur;220;;0
+Plomberie;226;Secteur;220;;0
+Vitres;227;Secteur;220;;0
+Général;230;Maison et habitat;200;;0
+Déménagement;231;Général;230;;0
+Aménagement intérieur;240;Maison et habitat;200;;0
+Décoration;241;Aménagement intérieur;240;;0
+Textile;242;Aménagement intérieur;240;;0
+Aménagement extérieur;250;Maison et habitat;200;;0
+Jardinage;251;Aménagement extérieur;250;;0
+Quotidien;300;;;;2
+Mode d'emploi;310;Quotidien;300;;0
+Gardiennage;320;Quotidien;300;;0
+Baby-sitting;321;Gardiennage;320;;0
+Dog-sitting;322;Gardiennage;320;;0
+Garde-malade;323;Gardiennage;320;;0
+Home-sitting;324;Gardiennage;320;;0
+Aide aux personnes;330;Quotidien;300;;0
+Cours et langues;400;;;;1
+Coach;401;Cours et langues;400;;0
+Préparation aux concours;403;Cours et langues;400;;0
+Aide scolaire niveau primaire;410;Cours et langues;400;;0
+Mathématiques;411;Aide scolaire niveau primaire;410;;0
+Sciences;412;Aide scolaire niveau primaire;410;;0
+Sports;413;Aide scolaire niveau primaire;410;;0
+Technologies;414;Aide scolaire niveau primaire;410;;0
+Arts;415;Aide scolaire niveau primaire;410;;0
+Histoire;416;Aide scolaire niveau primaire;410;;0
+Géographie;417;Aide scolaire niveau primaire;410;;0
+Philosophie et citoyenneté;418;Aide scolaire niveau primaire;410;;0
+Aide scolaire niveau secondaire;420;Cours et langues;400;;0
+Mathématiques;421;Aide scolaire niveau secondaire;420;;0
+Sciences;422;Aide scolaire niveau secondaire;420;;0
+Sports;423;Aide scolaire niveau secondaire;420;;0
+Technologies;424;Aide scolaire niveau secondaire;420;;0
+Arts;425;Aide scolaire niveau secondaire;420;;0
+Histoire;426;Aide scolaire niveau secondaire;420;;0
+Géographie;427;Aide scolaire niveau secondaire;420;;0
+Philosophie et citoyenneté;428;Aide scolaire niveau secondaire;420;;0
+Langues anciennes;429;Aide scolaire niveau secondaire;420;Latin / grec;0
+Sciences économiques et sociales;430;Aide scolaire niveau secondaire;420;;0
+Arts du cirque;431;Aide scolaire niveau secondaire;420;;0
+Autres;432;Aide scolaire niveau secondaire;420;;0
+Aide scolaire niveau supérieur;440;Cours et langues;400;;0
+Philosophie;441;Aide scolaire niveau supérieur;440;;0
+Théologie;442;Aide scolaire niveau supérieur;440;;0
+Langues, lettres et traductologie;443;Aide scolaire niveau supérieur;440;;0
+Histoire, histoire de l'art et archéologie;444;Aide scolaire niveau supérieur;440;;0
+Information et communication;445;Aide scolaire niveau supérieur;440;;0
+Sciences politiques et sociales;446;Aide scolaire niveau supérieur;440;;0
+Sciences juridiques;447;Aide scolaire niveau supérieur;440;;0
+Criminologie;448;Aide scolaire niveau supérieur;440;;0
+Sciences économiques et de gestion;449;Aide scolaire niveau supérieur;440;;0
+Sciences psychologiques et de l'éducation;450;Aide scolaire niveau supérieur;440;;0
+Sciences médicales;451;Aide scolaire niveau supérieur;440;;0
+Sciences vétérinaires;452;Aide scolaire niveau supérieur;440;;0
+Sciences dentaires;453;Aide scolaire niveau supérieur;440;;0
+Sciences biomédicales et pharmaceutiques;454;Aide scolaire niveau supérieur;440;;0
+Sciences de la santé publique;455;Aide scolaire niveau supérieur;440;;0
+Sciences de la motricité;456;Aide scolaire niveau supérieur;440;;0
+Sciences appliquées;461;Aide scolaire niveau supérieur;440;;0
+Sciences agronomiques et ingénierie biologique;462;Aide scolaire niveau supérieur;440;;0
+Sciences de l'ingénieur et technologie;463;Aide scolaire niveau supérieur;440;;0
+Art de bâtir et urbanisme;464;Aide scolaire niveau supérieur;440;;0
+Art et sciences de l'art;471;Aide scolaire niveau supérieur;440;;0
+Arts plastiques, visuels et de l'espace;472;Aide scolaire niveau supérieur;440;;0
+Musique;473;Aide scolaire niveau supérieur;440;;0
+Théâtre et arts de la parole;474;Aide scolaire niveau supérieur;440;;0
+Arts du spectacle et technique de diffusion et de communication;475;Aide scolaire niveau supérieur;440;;0
+Danse;476;Aide scolaire niveau supérieur;440;;0
+Langues;480;Cours et langues;400;;0
+Français;481;Langues;480;;0
+Néerlandais;483;Langues;480;;0
+Anglais;484;Langues;480;;0
+Allemand;485;Langues;480;;0
+Autres langues;489;Langues;480;;0
+Travaux de fin d'études;490;Cours et langues;400;;0
+Loisirs;500;;;;1
+Loisirs artistiques;510;Loisirs;500;;0
+Art et littérature;511;Loisirs artistiques;510;;0
+Musique et chant;512;Loisirs artistiques;510;;0
+Photo et vidéo;513;Loisirs artistiques;510;;0
+Théâtre et danse;514;Loisirs artistiques;510;;0
+Illustration, dessin, peinture, sculpture et graphisme;515;Loisirs artistiques;510;;0
+Artisanat;520;Loisirs;500;;0
+Détente et soins du corps;530;Loisirs;500;;0
+Sports et activités en plein air;540;Loisirs;500;;0
+Jeux;550;Loisirs;500;;0
+Visites;560;Loisirs;500;Jardins, parcs et musées;0
+Vacances et voyages;570;Loisirs;500;;0
+Corps, âme et esprit;600;;;;2
+Soins du corps;610;Corps, âme et esprit;600;;0
+Soins de l'esprit;620;Corps, âme et esprit;600;;0
+Look et style;630;Corps, âme et esprit;600;;0
+Gastronomie et alimentation;700;;;;2
+Conseils alimentaires;710;Gastronomie et alimentation;700;;0
+Cuisinez pour moi;720;Gastronomie et alimentation;700;;0
+Atelier de cuisine;730;Gastronomie et alimentation;700;;0
+Aletier d'Oenologie;740;Gastronomie et alimentation;700;;0
+Salon de dégustation;750;Gastronomie et alimentation;700;;0
+Communications;800;;;;1
+Organisation d'un évènement privé;810;Communications;800;Aide à la préparation d'un anniversaire, mariage, baptême, funérailles, ...;0
+Preterie et donnerie;900;;;;1
+A prêter;901;Preterie et donnerie;900;;0
+A donner;950;Preterie et donnerie;900;;0

@@ -1,0 +1,121 @@
+				9	100		1,29
+Categorie	Categorie ID	Parent	Parent ID	Racine	Feuille	Description	Nb grains minimum
+Aide administrative, sociale et juridique	100			VRAI	FAUX		1
+Aide administrative	110	Aide administrative, sociale et juridique	100	FAUX	VRAI		1
+Aide sociale	120	Aide administrative, sociale et juridique	100	FAUX	VRAI		1
+Vie sociale	130	Aide administrative, sociale et juridique	100	FAUX	VRAI		1
+Aide juridique	140	Aide administrative, sociale et juridique	100	FAUX	VRAI		1
+Comparaison télécoms	150	Aide administrative, sociale et juridique	100	FAUX	VRAI		1
+Comparaison assurances	160	Aide administrative, sociale et juridique	100	FAUX	VRAI		1
+Maison et habitat	200			VRAI	FAUX		2
+Petits travaux	210	Maison et habitat	200	FAUX	VRAI		2
+Secteur	220	Maison et habitat	200	FAUX	FAUX		2
+Chauffage	221	Secteur	220	FAUX	VRAI		2
+Électricité	222	Secteur	220	FAUX	VRAI		2
+Électroménager	223	Secteur	220	FAUX	VRAI		2
+Menuiserie	224	Secteur	220	FAUX	VRAI		2
+Pierre	225	Secteur	220	FAUX	VRAI		2
+Plomberie	226	Secteur	220	FAUX	VRAI		2
+Vitres	227	Secteur	220	FAUX	VRAI		2
+Général	230	Maison et habitat	200	FAUX	FAUX		2
+Déménagement	231	Général	230	FAUX	VRAI		2
+Aménagement intérieur	240	Maison et habitat	200	FAUX	FAUX		2
+Décoration	241	Aménagement intérieur	240	FAUX	VRAI		2
+Textile	242	Aménagement intérieur	240	FAUX	VRAI		2
+Aménagement extérieur	250	Maison et habitat	200	FAUX	FAUX		2
+Jardinage	251	Aménagement extérieur	250	FAUX	VRAI		2
+Quotidien	300			VRAI	FAUX		2
+Mode d'emploi	310	Quotidien	300	FAUX	VRAI		2
+Gardiennage	320	Quotidien	300	FAUX	FAUX		2
+Baby-sitting	321	Gardiennage	320	FAUX	VRAI		2
+Dog-sitting	322	Gardiennage	320	FAUX	VRAI		2
+Garde-malade	323	Gardiennage	320	FAUX	VRAI		2
+Home-sitting	324	Gardiennage	320	FAUX	VRAI		2
+Aide aux personnes	330	Quotidien	300	FAUX	VRAI		2
+Cours et langues	400			VRAI	FAUX		1
+Coach	401	Cours et langues	400	FAUX	VRAI		1
+Préparation aux concours	403	Cours et langues	400	FAUX	VRAI		1
+Aide scolaire niveau primaire	410	Cours et langues	400	FAUX	FAUX		1
+Mathématiques	411	Aide scolaire niveau primaire	410	FAUX	VRAI		1
+Sciences	412	Aide scolaire niveau primaire	410	FAUX	VRAI		1
+Sports	413	Aide scolaire niveau primaire	410	FAUX	VRAI		1
+Technologies	414	Aide scolaire niveau primaire	410	FAUX	VRAI		1
+Arts	415	Aide scolaire niveau primaire	410	FAUX	VRAI		1
+Histoire	416	Aide scolaire niveau primaire	410	FAUX	VRAI		1
+Géographie	417	Aide scolaire niveau primaire	410	FAUX	VRAI		1
+Philosophie et citoyenneté	418	Aide scolaire niveau primaire	410	FAUX	VRAI		1
+Aide scolaire niveau secondaire	420	Cours et langues	400	FAUX	FAUX		1
+Mathématiques	421	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Sciences	422	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Sports	423	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Technologies	424	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Arts	425	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Histoire	426	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Géographie	427	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Philosophie et citoyenneté	428	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Langues anciennes	429	Aide scolaire niveau secondaire	420	FAUX	VRAI	Latin / grec	1
+Sciences économiques et sociales	430	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Arts du cirque	431	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Autres	432	Aide scolaire niveau secondaire	420	FAUX	VRAI		1
+Aide scolaire niveau supérieur	440	Cours et langues	400	FAUX	FAUX		1
+Philosophie	441	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Théologie	442	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Langues, lettres et traductologie	443	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Histoire, histoire de l'art et archéologie	444	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Information et communication	445	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences politiques et sociales	446	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences juridiques	447	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Criminologie	448	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences économiques et de gestion	449	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences psychologiques et de l'éducation	450	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences médicales	451	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences vétérinaires	452	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences dentaires	453	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences biomédicales et pharmaceutiques	454	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences de la santé publique	455	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences de la motricité	456	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences appliquées	461	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences agronomiques et ingénierie biologique	462	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Sciences de l'ingénieur et technologie	463	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Art de bâtir et urbanisme	464	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Art et sciences de l'art	471	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Arts plastiques, visuels et de l'espace	472	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Musique	473	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Théâtre et arts de la parole	474	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Arts du spectacle et technique de diffusion et de communication	475	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Danse	476	Aide scolaire niveau supérieur	440	FAUX	VRAI		1
+Langues	480	Cours et langues	400	FAUX	FAUX		1
+Français	481	Langues	480	FAUX	VRAI		1
+Néerlandais	483	Langues	480	FAUX	VRAI		1
+Anglais	484	Langues	480	FAUX	VRAI		1
+Allemand	485	Langues	480	FAUX	VRAI		1
+Autres langues	489	Langues	480	FAUX	VRAI		1
+Travaux de fin d'études	490	Cours et langues	400	FAUX	VRAI		1
+Loisirs	500			VRAI	FAUX		1
+Loisirs artistiques	510	Loisirs	500	FAUX	FAUX		1
+Art et littérature	511	Loisirs artistiques	510	FAUX	VRAI		1
+Musique et chant	512	Loisirs artistiques	510	FAUX	VRAI		1
+Photo et vidéo	513	Loisirs artistiques	510	FAUX	VRAI		1
+Théâtre et danse	514	Loisirs artistiques	510	FAUX	VRAI		1
+Illustration, dessin, peinture, sculpture et graphisme	515	Loisirs artistiques	510	FAUX	VRAI		1
+Artisanat	520	Loisirs	500	FAUX	VRAI		1
+Détente et soins du corps	530	Loisirs	500	FAUX	VRAI		1
+Sports et activités en plein air	540	Loisirs	500	FAUX	VRAI		1
+Jeux	550	Loisirs	500	FAUX	VRAI		1
+Visites	560	Loisirs	500	FAUX	VRAI	Jardins, parcs et musées	1
+Vacances et voyages	570	Loisirs	500	FAUX	VRAI		1
+Corps, âme et esprit	600			VRAI	FAUX		2
+Soins du corps	610	Corps, âme et esprit	600	FAUX	VRAI		2
+Soins de l'esprit	620	Corps, âme et esprit	600	FAUX	VRAI		2
+Look et style	630	Corps, âme et esprit	600	FAUX	VRAI		2
+Gastronomie et alimentation	700			VRAI	FAUX		2
+Conseils alimentaires	710	Gastronomie et alimentation	700	FAUX	VRAI		2
+Cuisinez pour moi	720	Gastronomie et alimentation	700	FAUX	VRAI		2
+Atelier de cuisine	730	Gastronomie et alimentation	700	FAUX	VRAI		2
+Aletier d'Oenologie	740	Gastronomie et alimentation	700	FAUX	VRAI		2
+Salon de dégustation	750	Gastronomie et alimentation	700	FAUX	VRAI		2
+Communications	800			VRAI	FAUX		1
+Organisation d'un évènement privé	810	Communications	800	FAUX	VRAI	Aide à la préparation d'un anniversaire, mariage, baptême, funérailles, ...	1
+Preterie et donnerie	900			VRAI	FAUX		1
+A prêter	901	Preterie et donnerie	900	FAUX	VRAI		1
+A donner	950	Preterie et donnerie	900	FAUX	VRAI		1

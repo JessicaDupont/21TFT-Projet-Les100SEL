@@ -76,9 +76,6 @@
     <Build Include="Tables\messages.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Les100SEL.DBADO.publish.xml" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[categories]
 (
-	categorie_id INT NOT NULL identity PRIMARY KEY,
+	categorie_id INT NOT NULL PRIMARY KEY,
 	nom nvarchar(150) not null,
 	[description] text,
 	grains_min int default(1),

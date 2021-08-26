@@ -1,0 +1,6 @@
+Recap;ID;Categorie ID;Categorie;Utilsiateur ID;utilisateur;Region ID;Region;titre;adresse;description;nb grains;active
+apprendre le violon (Jessica);1;512;Musique et chant;1;Jessica;4539;Marchin;apprendre le violon;;;5;VRAI
+apprendre à dessiner (Jessica);2;515;Illustration, dessin, peinture, sculpture et graphisme;1;Jessica;4539;Marchin;apprendre à dessiner;;;5;VRAI
+apprendre à coudre (Angélique);3;242;Textile;5;Angélique;4541;Modave;apprendre à coudre;;;2;VRAI
+help (Isabel);4;231;Déménagement;2;Isabel;1000;Bruxelles;help;;;2;FAUX
+apprendreissage niveau b2 (Jessica);5;484;Anglais;1;Jessica;4539;Marchin;apprendreissage niveau b2;;;1;FAUX
